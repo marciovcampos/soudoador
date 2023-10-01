@@ -4,8 +4,15 @@
   </a>
   <app-menu [menuItems]="menuItems" class="menu-container"></app-menu>
   <div class="buttons-container">
-    <button mat-button [routerLink]="['/entrar']">Entrar</button>
-    <button mat-flat-button color="accent" [routerLink]="['/cadastro']">
+    <button mat-button [routerLink]="['/entrar']" class="buttonLogin">
+      Entrar
+    </button>
+    <button
+      mat-flat-button
+      color="accent"
+      [routerLink]="['/cadastro']"
+      class="buttonRegister"
+    >
       Faça parte
     </button>
   </div>
