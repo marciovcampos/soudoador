@@ -13,6 +13,20 @@
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/poppins-bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 $fontConfig: (
   display-4: mat.define-typography-level(112px, 112px, 300, "Roboto", -0.0134em),
   display-3: mat.define-typography-level(56px, 56px, 400, "Roboto", -0.0089em),
@@ -202,6 +216,38 @@ body {
   --text-warn-lighter-color: #{$dark-primary-text};
   --text-warn-darker-color: #{$light-primary-text};
 }
+
+h1 {
+  color: var(--white-900, #fff);
+  font-family: Poppins;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px; /* 125% */
+  letter-spacing: -0.96px;
+}
+
+h2 {
+  color: var(--gray-400, $light-text);
+
+  /* text-xl/Medium */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px; /* 150% */
+}
+
+p {
+  color: var(--gray-400, $light-text);
+  text-align: justify;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+}
+
 $mat-warn: (
   main: #3f5159,
   lighter: #c5cbcd,
