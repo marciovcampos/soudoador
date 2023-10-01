@@ -1,4 +1,10 @@
 <div class="homeTitle">
   <img src="assets/logo.svg" alt="Sou Doador" class="logo" />
   <div class="callToAction">Faça parte de algo maior</div>
+  <div class="buttons-container">
+    <button mat-button (click)="navigateTo('/entrar')">Entrar</button>
+    <button mat-flat-button color="accent" (click)="navigateTo('/cadastro')">
+      Faça parte
+    </button>
+  </div>
 </div>

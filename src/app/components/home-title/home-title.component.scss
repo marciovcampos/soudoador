@@ -14,6 +14,7 @@
 .callToAction {
   color: var(--white-900, #fff);
   text-align: center;
+  margin-bottom: 5.8125rem;
 
   font-family: Poppins;
   font-size: 60px;
@@ -21,4 +22,34 @@
   font-weight: 700;
   line-height: 72px;
   letter-spacing: -1.2px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttonLogin {
+  color: var(--gray-300, #bbc3cf) !important;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+  height: 3.5rem;
+  padding: 16px 28px;
+}
+
+.buttonRegister {
+  color: var(--primary-050, #f0fdf4) !important;
+
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+  height: 3.5rem;
+  padding: 16px 28px;
 }
