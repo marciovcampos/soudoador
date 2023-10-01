@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "\\n\\n\\nLint Staged \\n\\n\\n"
+npm run lint
+
+echo "\\n\\n\\nRun Tests\\n\\n\\n"
+npm run test 
