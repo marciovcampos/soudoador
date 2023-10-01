@@ -10,6 +10,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { CampaignsComponent } from './pages/campaigns/campaigns.component';
+import { WhereDonateComponent } from './pages/where-donate/where-donate.component';
+import { FaqComponent } from './pages/faq/faq.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import { ContactComponent } from './pages/contact/contact.component';
     FooterComponent,
     MenuComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    CampaignsComponent,
+    WhereDonateComponent,
+    FaqComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
