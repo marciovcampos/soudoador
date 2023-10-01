@@ -1,10 +1,24 @@
 .homeTitle {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo {
   width: 50.875rem;
   margin-top: 8rem;
   margin-bottom: 2rem;
+}
+
+.callToAction {
+  color: var(--white-900, #fff);
+  text-align: center;
+
+  font-family: Poppins;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 72px;
+  letter-spacing: -1.2px;
 }
