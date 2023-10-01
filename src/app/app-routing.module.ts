@@ -6,8 +6,10 @@ import { CampaignsComponent } from './pages/campaigns/campaigns.component';
 import { WhereDonateComponent } from './pages/where-donate/where-donate.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'campanhas', component: CampaignsComponent },
   { path: 'onde-doar', component: WhereDonateComponent },
   { path: 'faq', component: FaqComponent },
