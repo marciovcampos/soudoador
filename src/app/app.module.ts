@@ -17,6 +17,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HomeTitleComponent } from './components/home-title/home-title.component';
+import { PageTitleComponent } from './components/page-title/page-title.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HomeTitleComponent } from './components/home-title/home-title.component
     RegistrationComponent,
     HomeComponent,
     HomeTitleComponent,
+    PageTitleComponent,
   ],
   imports: [
     BrowserModule,
