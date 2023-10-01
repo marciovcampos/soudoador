@@ -1,4 +1,5 @@
-<nav class="menu" color="primary">
-  <a routerLink="/contato">Contato</a>
-  <a routerLink="/sobre">Sobre</a>
+<nav class="menu">
+  <a *ngFor="let menuItem of menuItems" [routerLink]="menuItem.link">
+    {{ menuItem.label }}
+  </a>
 </nav>
