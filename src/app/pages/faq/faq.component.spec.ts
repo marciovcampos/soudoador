@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FaqComponent } from './faq.component';
+import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
 
 describe('FaqComponent', () => {
   let component: FaqComponent;
@@ -8,7 +9,7 @@ describe('FaqComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FaqComponent]
+      declarations: [FaqComponent, PageTitleComponent],
     });
     fixture = TestBed.createComponent(FaqComponent);
     component = fixture.componentInstance;

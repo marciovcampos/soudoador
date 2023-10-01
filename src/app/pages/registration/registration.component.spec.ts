@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RegistrationComponent } from './registration.component';
+import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
 
 describe('RegistrationComponent', () => {
   let component: RegistrationComponent;
@@ -8,7 +9,7 @@ describe('RegistrationComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RegistrationComponent]
+      declarations: [RegistrationComponent, PageTitleComponent],
     });
     fixture = TestBed.createComponent(RegistrationComponent);
     component = fixture.componentInstance;

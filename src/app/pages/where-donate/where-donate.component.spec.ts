@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WhereDonateComponent } from './where-donate.component';
+import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
 
 describe('WhereDonateComponent', () => {
   let component: WhereDonateComponent;
@@ -8,7 +9,7 @@ describe('WhereDonateComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WhereDonateComponent]
+      declarations: [WhereDonateComponent, PageTitleComponent],
     });
     fixture = TestBed.createComponent(WhereDonateComponent);
     component = fixture.componentInstance;
