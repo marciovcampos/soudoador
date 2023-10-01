@@ -16,6 +16,7 @@ import { WhereDonateComponent } from './pages/where-donate/where-donate.componen
 import { FaqComponent } from './pages/faq/faq.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { HomeComponent } from './pages/home/home.component';
+import { HomeTitleComponent } from './components/home-title/home-title.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HomeComponent } from './pages/home/home.component';
     FaqComponent,
     RegistrationComponent,
     HomeComponent,
+    HomeTitleComponent,
   ],
   imports: [
     BrowserModule,
