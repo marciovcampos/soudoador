@@ -1,5 +1,7 @@
 <mat-toolbar color="primary" class="header">
-  <img src="assets/logo.svg" alt="Descrição da imagem" class="logo" />
+  <a [routerLink]="['/']">
+    <img src="assets/logo.svg" alt="Descrição da imagem" class="logo" />
+  </a>
   <app-menu [menuItems]="menuItems" class="menu-container"></app-menu>
   <div class="buttons-container">
     <button mat-button [routerLink]="['/entrar']">Entrar</button>
