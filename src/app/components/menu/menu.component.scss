@@ -1,0 +1,13 @@
+.menu {
+  margin-bottom: 2.8125rem;
+}
+
+.menu a {
+  margin: 0 10px;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--accent-color);
+}
