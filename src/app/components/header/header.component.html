@@ -1,3 +1,8 @@
 <mat-toolbar color="primary" class="header">
   <img src="assets/logo.svg" alt="Descrição da imagem" class="logo" />
+  <app-menu [menuItems]="menuItems"></app-menu>
+  <button mat-button [routerLink]="['/entrar']">Entrar</button>
+  <button mat-flat-button color="accent" [routerLink]="['/cadastro']">
+    Faça parte
+  </button>
 </mat-toolbar>
