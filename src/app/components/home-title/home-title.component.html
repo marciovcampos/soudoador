@@ -2,8 +2,15 @@
   <img src="assets/logo.svg" alt="Sou Doador" class="logo" />
   <div class="callToAction">Faça parte de algo maior</div>
   <div class="buttons-container">
-    <button mat-button (click)="navigateTo('/entrar')">Entrar</button>
-    <button mat-flat-button color="accent" (click)="navigateTo('/cadastro')">
+    <button mat-button (click)="navigateTo('/entrar')" class="buttonLogin">
+      Entrar
+    </button>
+    <button
+      mat-flat-button
+      color="accent"
+      (click)="navigateTo('/cadastro')"
+      class="buttonRegister"
+    >
       Faça parte
     </button>
   </div>

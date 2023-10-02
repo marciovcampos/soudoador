@@ -19,6 +19,7 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { HomeComponent } from './pages/home/home.component';
 import { HomeTitleComponent } from './components/home-title/home-title.component';
 import { PageTitleComponent } from './components/page-title/page-title.component';
+import { TwoColumnLayoutComponent } from './components/two-column-layout/two-column-layout.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PageTitleComponent } from './components/page-title/page-title.component
     HomeComponent,
     HomeTitleComponent,
     PageTitleComponent,
+    TwoColumnLayoutComponent,
   ],
   imports: [
     BrowserModule,

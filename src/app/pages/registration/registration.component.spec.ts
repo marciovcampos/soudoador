@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatChipsModule } from '@angular/material/chips';
 import { RegistrationComponent } from './registration.component';
 import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
+import { TwoColumnLayoutComponent } from 'src/app/components/two-column-layout/two-column-layout.component';
 
 describe('RegistrationComponent', () => {
   let component: RegistrationComponent;
@@ -9,7 +10,11 @@ describe('RegistrationComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RegistrationComponent, PageTitleComponent],
+      declarations: [
+        RegistrationComponent,
+        PageTitleComponent,
+        TwoColumnLayoutComponent,
+      ],
       imports: [MatChipsModule],
     });
     fixture = TestBed.createComponent(RegistrationComponent);
