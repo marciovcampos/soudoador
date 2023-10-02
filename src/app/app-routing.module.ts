@@ -7,6 +7,7 @@ import { WhereDonateComponent } from './pages/where-donate/where-donate.componen
 import { FaqComponent } from './pages/faq/faq.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'onde-doar', component: WhereDonateComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'cadastro', component: RegistrationComponent },
+  { path: 'entrar', component: LoginComponent },
   { path: 'sobre', component: AboutComponent },
   { path: 'contato', component: ContactComponent },
 ];

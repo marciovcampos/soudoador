@@ -20,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HomeTitleComponent } from './components/home-title/home-title.component';
 import { PageTitleComponent } from './components/page-title/page-title.component';
 import { TwoColumnLayoutComponent } from './components/two-column-layout/two-column-layout.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TwoColumnLayoutComponent } from './components/two-column-layout/two-col
     HomeTitleComponent,
     PageTitleComponent,
     TwoColumnLayoutComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
