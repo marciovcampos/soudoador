@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {
+  info = 'Sobre';
   title = 'Sobre';
   subtitle = 'O que é o Sou Doador?';
   description = `Nós, da equipe do Sistema Sou Doador, estamos comprometidos em promover e facilitar a doação de sangue, um ato de solidariedade que salva vidas. 
