@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatChipsModule } from '@angular/material/chips';
 import { ContactComponent } from './contact.component';
 import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
 
@@ -10,6 +10,7 @@ describe('ContactComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ContactComponent, PageTitleComponent],
+      imports: [MatChipsModule],
     });
     fixture = TestBed.createComponent(ContactComponent);
     component = fixture.componentInstance;

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatChipsModule } from '@angular/material/chips';
 import { CampaignsComponent } from './campaigns.component';
 import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
 
@@ -10,6 +10,7 @@ describe('CampaignsComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CampaignsComponent, PageTitleComponent],
+      imports: [MatChipsModule],
     });
     fixture = TestBed.createComponent(CampaignsComponent);
     component = fixture.componentInstance;
