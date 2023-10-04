@@ -24,6 +24,7 @@ import { HomeTitleComponent } from './components/home-title/home-title.component
 import { PageTitleComponent } from './components/page-title/page-title.component';
 import { TwoColumnLayoutComponent } from './components/two-column-layout/two-column-layout.component';
 import { LoginComponent } from './pages/login/login.component';
+import { HomeMessageComponent } from './components/home-message/home-message.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { LoginComponent } from './pages/login/login.component';
     PageTitleComponent,
     TwoColumnLayoutComponent,
     LoginComponent,
+    HomeMessageComponent,
   ],
   imports: [
     BrowserModule,
