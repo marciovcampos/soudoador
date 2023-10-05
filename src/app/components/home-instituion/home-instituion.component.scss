@@ -1,0 +1,32 @@
+.homeInstituion {
+  background: var(--white-900, #fff);
+  padding: 7rem 5.5rem;
+}
+
+.instituionText {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  width: 16.3125rem;
+  height: 9.125rem;
+  flex-shrink: 0;
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  background: var(--gray-050, #f7f8f9);
+}
+
+.card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

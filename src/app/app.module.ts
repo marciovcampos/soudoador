@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,6 +26,7 @@ import { PageTitleComponent } from './components/page-title/page-title.component
 import { TwoColumnLayoutComponent } from './components/two-column-layout/two-column-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeMessageComponent } from './components/home-message/home-message.component';
+import { HomeInstituionComponent } from './components/home-instituion/home-instituion.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { HomeMessageComponent } from './components/home-message/home-message.com
     TwoColumnLayoutComponent,
     LoginComponent,
     HomeMessageComponent,
+    HomeInstituionComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { HomeMessageComponent } from './components/home-message/home-message.com
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
     MatChipsModule,
     MatFormFieldModule,
     MatInputModule,

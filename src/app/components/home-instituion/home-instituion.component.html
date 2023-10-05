@@ -1,0 +1,10 @@
+<div class="homeInstituion">
+  <p class="instituionText">Institutos que confiam no nosso trabalho</p>
+  <div class="card-container">
+    <mat-card *ngFor="let card of cards" class="card">
+      <div class="card-image">
+        <img [src]="card.image" [alt]="card.name" />
+      </div>
+    </mat-card>
+  </div>
+</div>
