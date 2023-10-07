@@ -30,6 +30,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeMessageComponent } from './components/home-message/home-message.component';
 import { HomeInstituionComponent } from './components/home-instituion/home-instituion.component';
 import { environment } from '../environments/environment';
+import { InstituionListComponent } from './components/instituion-list/instituion-list.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { environment } from '../environments/environment';
     LoginComponent,
     HomeMessageComponent,
     HomeInstituionComponent,
+    InstituionListComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

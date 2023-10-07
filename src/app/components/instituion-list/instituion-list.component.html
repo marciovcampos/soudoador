@@ -1,0 +1,16 @@
+<div class="instituion-list">
+  <div class="instituion" *ngFor="let institution of institutions">
+    <div class="column">
+      <div class="image-container">
+        <img
+          [src]="institution.image"
+          [alt]="institution.name"
+          class="centered-image"
+        />
+      </div>
+    </div>
+    <div class="column">
+      <h2>{{ institution.name }}</h2>
+    </div>
+  </div>
+</div>

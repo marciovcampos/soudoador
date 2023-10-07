@@ -3,11 +3,11 @@ import { FirebaseService } from 'src/app/shared/firebase.service';
 import { Instituion } from 'src/app/shared/instituion';
 
 @Component({
-  selector: 'app-home-instituion',
-  templateUrl: './home-instituion.component.html',
-  styleUrls: ['./home-instituion.component.scss'],
+  selector: 'app-instituion-list',
+  templateUrl: './instituion-list.component.html',
+  styleUrls: ['./instituion-list.component.scss'],
 })
-export class HomeInstituionComponent implements OnInit {
+export class InstituionListComponent implements OnInit {
   institutions?: Instituion[];
 
   constructor(public service: FirebaseService) {}
@@ -18,7 +18,7 @@ export class HomeInstituionComponent implements OnInit {
 
   getAllInstituions(): void {
     this.service.getAllInstituions().subscribe((data) => {
-      this.institutions = [...data, ...data];
+      this.institutions = data;
     });
   }
 }
