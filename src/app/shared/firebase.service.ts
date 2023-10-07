@@ -4,18 +4,27 @@ import {
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
 import { Instituion } from './instituion';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirebaseService {
-  institionsRef: AngularFirestoreCollection<Instituion>;
+  instituionsCollection: AngularFirestoreCollection<Instituion>;
 
-  constructor(private db: AngularFirestore) {
-    this.institionsRef = db.collection('/instituions');
+  constructor(private firestore: AngularFirestore) {
+    this.instituionsCollection = this.firestore.collection('instituions');
   }
 
-  getAllInstituions(): AngularFirestoreCollection<Instituion> {
-    return this.institionsRef;
+  getAllInstituions(): Observable<Instituion[]> {
+    return this.instituionsCollection.snapshotChanges().pipe(
+      map((actions) =>
+        actions.map((a) => {
+          const data = a.payload.doc.data() as Instituion;
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        })
+      )
+    );
   }
 }

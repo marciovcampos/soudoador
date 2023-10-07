@@ -9,13 +9,6 @@ import { Instituion } from 'src/app/shared/instituion';
   styleUrls: ['./home-instituion.component.scss'],
 })
 export class HomeInstituionComponent implements OnInit {
-  cards = [
-    { name: 'Card 1', image: 'assets/logo.svg' },
-    { name: 'Card 2', image: 'assets/logo.svg' },
-    { name: 'Card 3', image: 'assets/logo.svg' },
-    { name: 'Card 4', image: 'assets/logo.svg' },
-  ];
-
   institutions?: Instituion[];
 
   constructor(public service: FirebaseService) {}
@@ -25,19 +18,8 @@ export class HomeInstituionComponent implements OnInit {
   }
 
   getAllInstituions(): void {
-    this.service
-      .getAllInstituions()
-      .snapshotChanges()
-      .pipe(
-        map((changes) =>
-          changes.map((c) => ({
-            id: c.payload.doc.id,
-            ...c.payload.doc.data(),
-          }))
-        )
-      )
-      .subscribe((data) => {
-        this.institutions = [...data, ...data];
-      });
+    this.service.getAllInstituions().subscribe((data) => {
+      this.institutions = [...data, ...data];
+    });
   }
 }
