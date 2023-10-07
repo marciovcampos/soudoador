@@ -20,6 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+      - run: node server.js
+        env:
+          FIREBASE_DETAILS: "${{ secrets.FIREBASE_DETAITLS }}"
+      #continue with build
       - run: npm ci && npm run build --prod
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
