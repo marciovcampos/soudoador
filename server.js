@@ -7,29 +7,34 @@ const dir = "src/environments";
 const file = "environment.ts";
 const prodFile = "environment.prod.ts";
 
-const content = `$(process.env.FIREBASE DETAILS)`;
+const content = `$(process.env.FIREBASE_DETAILS)`;
 
 fs.access(dir, fs.constants.F_OK, (err) => {
-    if(err) {
+    if (err) {
         // Directory doesn't exist
         console.log("src doesn't exist, creating now", process.cwd());
         // Create /src
-        fs.mkdir(dir, {recursive: true}, (err) => {
+        fs.mkdir(dir, { recursive: true }, (err) => {
             if (err) throw err;
+            writeToFiles();
         });
+    } else {
+        writeToFiles();
     }
-    // Nou write to file
+});
+
+function writeToFiles() {
     try {
-        fs.writeFilesync(dir + "/" + file, content);
-        fs.writeFilesync(dir + "/" + prodFile, content);
-        console. log( "Created successfully in", process.cwd());
-        if(fs.existssync(dir + "/" + file)) {
-            console.log("File is created", path.resolve(dir + "/" + file));
-            const str = fs.readFilesync(dir + "/" + file).tostring();
-            console. log(str);
+        fs.writeFileSync(path.join(dir, file), content);
+        fs.writeFileSync(path.join(dir, prodFile), content);
+        console.log("Created successfully in", process.cwd());
+        if (fs.existsSync(path.join(dir, file))) {
+            console.log("File is created", path.resolve(path.join(dir, file)));
+            const str = fs.readFileSync(path.join(dir, file)).toString();
+            console.log(str);
         }
     } catch (error) {
-            console. error(error);
-            process .exit(1);
-        }
-});
+        console.error(error);
+        process.exit(1);
+    }
+}
