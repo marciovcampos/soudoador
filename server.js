@@ -25,8 +25,8 @@ fs.access(dir, fs.constants.F_OK, (err) => {
 
 function writeToFiles() {
     try {
-        fs.writeFileSync(path.join(dir, file), content);
         fs.writeFileSync(path.join(dir, prodFile), content);
+        fs.writeFileSync(path.join(dir, file), content);
         console.log("Created successfully in", process.cwd());
         if (fs.existsSync(path.join(dir, file))) {
             console.log("File is created", path.resolve(path.join(dir, file)));
