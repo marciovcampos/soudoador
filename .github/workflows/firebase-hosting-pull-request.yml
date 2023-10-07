@@ -4,24 +4,23 @@
 name: Deploy to Firebase Hosting on PR
 "on": pull_request
 
-env:
-  API_KEY: ${{ secrets.FIREBASE_API_KEY }}
-  AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
-  PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
-  STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
-  MESSAGE_SENDER_ID: ${{ secrets.FIREBASE_MESSAGE_SENDER_ID }}
-  APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-  MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
-
 jobs:
   build_and_preview:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm ci && npm run build --prod
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - run: node server.js
+        env:
+          FIREBASE_DETAILS: "${{ secrets.FIREBASE_DETAITLS }}"
+      #continue with build
+      - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_SOUDOADOR2023 }}"
+          channelId: live
           projectId: soudoador2023
