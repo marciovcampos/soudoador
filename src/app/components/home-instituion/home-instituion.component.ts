@@ -37,8 +37,7 @@ export class HomeInstituionComponent implements OnInit {
         )
       )
       .subscribe((data) => {
-        this.institutions = data;
-        console.log('institutions- ', data);
+        this.institutions = [...data, ...data];
       });
   }
 }
