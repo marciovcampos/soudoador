@@ -16,7 +16,7 @@ jobs:
           node-version: "18"
       - run: node server.js
         env:
-          FIREBASE_DETAILS: "${{ secrets.FIREBASE_DETAITLS }}"
+          FIREBASE_DETAILS: "${{ secrets.FIREBASE_DETAILS }}"
       #continue with build
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
