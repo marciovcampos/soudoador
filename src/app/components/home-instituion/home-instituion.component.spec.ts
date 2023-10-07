@@ -1,7 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeInstituionComponent } from './home-instituion.component';
+
 import { MatCardModule } from '@angular/material/card';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { firebaseConfigMock } from 'src/app/shared/mock-data';
 
 describe('HomeInstituionComponent', () => {
   let component: HomeInstituionComponent;
@@ -10,7 +14,11 @@ describe('HomeInstituionComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [HomeInstituionComponent],
-      imports: [MatCardModule],
+      imports: [
+        MatCardModule,
+        AngularFireModule.initializeApp(firebaseConfigMock),
+        AngularFirestoreModule,
+      ],
     });
     fixture = TestBed.createComponent(HomeInstituionComponent);
     component = fixture.componentInstance;

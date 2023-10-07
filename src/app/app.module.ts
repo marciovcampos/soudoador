@@ -9,6 +9,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,6 +29,7 @@ import { TwoColumnLayoutComponent } from './components/two-column-layout/two-col
 import { LoginComponent } from './pages/login/login.component';
 import { HomeMessageComponent } from './components/home-message/home-message.component';
 import { HomeInstituionComponent } from './components/home-instituion/home-instituion.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,8 @@ import { HomeInstituionComponent } from './components/home-instituion/home-insti
     HomeInstituionComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

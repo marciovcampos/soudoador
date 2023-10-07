@@ -6,6 +6,9 @@ import { HomeMessageComponent } from 'src/app/components/home-message/home-messa
 import { HomeInstituionComponent } from 'src/app/components/home-instituion/home-instituion.component';
 
 import { MatCardModule } from '@angular/material/card';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { firebaseConfigMock } from 'src/app/shared/mock-data';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -19,7 +22,11 @@ describe('HomeComponent', () => {
         HomeMessageComponent,
         HomeInstituionComponent,
       ],
-      imports: [MatCardModule],
+      imports: [
+        MatCardModule,
+        AngularFireModule.initializeApp(firebaseConfigMock),
+        AngularFirestoreModule,
+      ],
     });
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
