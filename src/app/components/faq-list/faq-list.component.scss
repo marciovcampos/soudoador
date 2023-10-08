@@ -1,3 +1,16 @@
 .faq-list {
   padding: 3rem 9.625rem;
 }
+
+.index-circle {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  line-height: 25px;
+  margin-right: 10px;
+}

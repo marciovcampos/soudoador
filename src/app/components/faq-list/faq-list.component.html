@@ -1,1 +1,5 @@
-<div class="faq-list">faq-list works!</div>
+<div class="faq-list">
+  <div class="faq" *ngFor="let fag of faqs; let index = index">
+    <span class="index-circle">{{ index + 1 }}</span>
+  </div>
+</div>
