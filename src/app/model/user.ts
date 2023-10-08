@@ -2,7 +2,8 @@ export interface User {
   $key: string;
   name: string;
   email: string;
-  bloodTupe: string;
+  password: string;
+  bloodType: string;
   weight: string;
   birthday: string;
   lastDonation: string;

@@ -24,10 +24,15 @@ export class RegistrationComponent {
     });
   }
 
-  createUser() {
+  async createUser() {
     if (this.registrationForm.valid) {
       const user = this.registrationForm.value;
-      this.service.createUser(user);
+      try {
+        await this.service.createUser(user);
+        console.log('Usuário criado com sucesso!');
+      } catch (error) {
+        console.error('Erro ao criar usuário:', error);
+      }
     } else {
       this.markFormGroupTouched(this.registrationForm);
     }

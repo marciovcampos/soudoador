@@ -18,12 +18,14 @@ export class FirebaseService {
   private institutionsCollection: AngularFirestoreCollection<Institution>;
   private campaignCollection: AngularFirestoreCollection<Campaign>;
   private faqCollection: AngularFirestoreCollection<Faq>;
+  private usersCollection: AngularFirestoreCollection<User>;
 
   constructor(private firestore: AngularFirestore) {
     this.institutionsCollection =
       this.firestore.collection<Institution>('instituions');
     this.campaignCollection = this.firestore.collection<Campaign>('campaigns');
     this.faqCollection = this.firestore.collection<Faq>('faq');
+    this.usersCollection = this.firestore.collection<User>('users');
   }
 
   getAllInstitutions(): Observable<Institution[]> {
@@ -44,8 +46,17 @@ export class FirebaseService {
       .pipe(map((actions) => this.mapCollectionData<Faq>(actions)));
   }
 
-  createUser(user: User) {
-    console.log('user- ', user);
+  createUser(user: User): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.usersCollection
+        .add(user)
+        .then(() => {
+          resolve();
+        })
+        .catch((error) => {
+          reject(`Erro ao criar usuário: ${error}`);
+        });
+    });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
