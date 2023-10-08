@@ -1,24 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InstituionListComponent } from './instituion-list.component';
+import { InstitutionListComponent } from './institution-list.component';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { firebaseConfigMock } from 'src/app/shared/mock-data';
 
-describe('InstituionListComponent', () => {
-  let component: InstituionListComponent;
-  let fixture: ComponentFixture<InstituionListComponent>;
+describe('InstitutionListComponent', () => {
+  let component: InstitutionListComponent;
+  let fixture: ComponentFixture<InstitutionListComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InstituionListComponent],
+      declarations: [InstitutionListComponent],
       imports: [
         AngularFireModule.initializeApp(firebaseConfigMock),
         AngularFirestoreModule,
       ],
     });
-    fixture = TestBed.createComponent(InstituionListComponent);
+    fixture = TestBed.createComponent(InstitutionListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

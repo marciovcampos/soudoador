@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/shared/firebase.service';
-import { Institution } from 'src/app/model/instituion';
+import { Institution } from 'src/app/model/institution';
 
 @Component({
-  selector: 'app-instituion-list',
-  templateUrl: './instituion-list.component.html',
-  styleUrls: ['./instituion-list.component.scss'],
+  selector: 'app-institution-list',
+  templateUrl: './institution-list.component.html',
+  styleUrls: ['./institution-list.component.scss'],
 })
-export class InstituionListComponent implements OnInit {
+export class InstitutionListComponent implements OnInit {
   institutions?: Institution[];
 
   constructor(public service: FirebaseService) {}
 
   ngOnInit() {
-    this.getAllInstituions();
+    this.getAllInstitutions();
   }
 
-  getAllInstituions(): void {
+  getAllInstitutions(): void {
     this.service.getAllInstitutions().subscribe((data) => {
       this.institutions = data;
     });

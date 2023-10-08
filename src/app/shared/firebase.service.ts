@@ -5,7 +5,7 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Institution } from '../model/instituion';
+import { Institution } from '../model/institution';
 import { Campaign } from '../model/campaign';
 
 @Injectable({

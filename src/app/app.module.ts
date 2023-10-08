@@ -28,9 +28,9 @@ import { PageTitleComponent } from './components/page-title/page-title.component
 import { TwoColumnLayoutComponent } from './components/two-column-layout/two-column-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeMessageComponent } from './components/home-message/home-message.component';
-import { HomeInstituionComponent } from './components/home-instituion/home-instituion.component';
+import { HomeInstitutionComponent } from './components/home-institution/home-institution.component';
 import { environment } from '../environments/environment';
-import { InstituionListComponent } from './components/instituion-list/instituion-list.component';
+import { InstitutionListComponent } from './components/institution-list/institution-list.component';
 import { CampaignListComponent } from './components/campaign-list/campaign-list.component';
 
 @NgModule({
@@ -51,8 +51,8 @@ import { CampaignListComponent } from './components/campaign-list/campaign-list.
     TwoColumnLayoutComponent,
     LoginComponent,
     HomeMessageComponent,
-    HomeInstituionComponent,
-    InstituionListComponent,
+    HomeInstitutionComponent,
+    InstitutionListComponent,
     CampaignListComponent,
   ],
   imports: [

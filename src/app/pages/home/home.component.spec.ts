@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { HomeTitleComponent } from 'src/app/components/home-title/home-title.component';
 import { HomeMessageComponent } from 'src/app/components/home-message/home-message.component';
-import { HomeInstituionComponent } from 'src/app/components/home-instituion/home-instituion.component';
+import { HomeInstitutionComponent } from 'src/app/components/home-institution/home-institution.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -20,7 +20,7 @@ describe('HomeComponent', () => {
         HomeComponent,
         HomeTitleComponent,
         HomeMessageComponent,
-        HomeInstituionComponent,
+        HomeInstitutionComponent,
       ],
       imports: [
         MatCardModule,
