@@ -17,7 +17,7 @@ export class FirebaseService {
 
   constructor(private firestore: AngularFirestore) {
     this.instituionsCollection =
-      this.firestore.collection<Instituion>('institutions');
+      this.firestore.collection<Instituion>('instituions');
     this.campaignCollection = this.firestore.collection<Campaign>('campaigns');
   }
 
