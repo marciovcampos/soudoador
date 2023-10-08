@@ -5,26 +5,26 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Instituion } from '../model/instituion';
+import { Institution } from '../model/instituion';
 import { Campaign } from '../model/campaign';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirebaseService {
-  private instituionsCollection: AngularFirestoreCollection<Instituion>;
+  private institutionsCollection: AngularFirestoreCollection<Institution>;
   private campaignCollection: AngularFirestoreCollection<Campaign>;
 
   constructor(private firestore: AngularFirestore) {
-    this.instituionsCollection =
-      this.firestore.collection<Instituion>('instituions');
+    this.institutionsCollection =
+      this.firestore.collection<Institution>('instituions');
     this.campaignCollection = this.firestore.collection<Campaign>('campaigns');
   }
 
-  getAllInstitutions(): Observable<Instituion[]> {
-    return this.instituionsCollection
+  getAllInstitutions(): Observable<Institution[]> {
+    return this.institutionsCollection
       .snapshotChanges()
-      .pipe(map((actions) => this.mapCollectionData<Instituion>(actions)));
+      .pipe(map((actions) => this.mapCollectionData<Institution>(actions)));
   }
 
   getAllCampaigns(): Observable<Campaign[]> {

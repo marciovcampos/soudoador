@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/shared/firebase.service';
-import { Instituion } from 'src/app/model/instituion';
+import { Institution } from 'src/app/model/instituion';
 
 @Component({
   selector: 'app-home-instituion',
@@ -8,7 +8,7 @@ import { Instituion } from 'src/app/model/instituion';
   styleUrls: ['./home-instituion.component.scss'],
 })
 export class HomeInstituionComponent implements OnInit {
-  institutions?: Instituion[];
+  institutions?: Institution[];
 
   constructor(public service: FirebaseService) {}
 

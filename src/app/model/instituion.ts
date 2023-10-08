@@ -1,4 +1,4 @@
-export interface Instituion {
+export interface Institution {
   $key: string;
   name: string;
   image: string;
