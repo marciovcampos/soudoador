@@ -5,8 +5,10 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 import { Institution } from '../model/institution';
 import { Campaign } from '../model/campaign';
+import { Faq } from '../model/faq';
 
 @Injectable({
   providedIn: 'root',
@@ -14,11 +16,13 @@ import { Campaign } from '../model/campaign';
 export class FirebaseService {
   private institutionsCollection: AngularFirestoreCollection<Institution>;
   private campaignCollection: AngularFirestoreCollection<Campaign>;
+  private faqCollection: AngularFirestoreCollection<Faq>;
 
   constructor(private firestore: AngularFirestore) {
     this.institutionsCollection =
       this.firestore.collection<Institution>('instituions');
     this.campaignCollection = this.firestore.collection<Campaign>('campaigns');
+    this.faqCollection = this.firestore.collection<Faq>('faq');
   }
 
   getAllInstitutions(): Observable<Institution[]> {
@@ -31,6 +35,12 @@ export class FirebaseService {
     return this.campaignCollection
       .snapshotChanges()
       .pipe(map((actions) => this.mapCollectionData<Campaign>(actions)));
+  }
+
+  getAllFaq(): Observable<Faq[]> {
+    return this.faqCollection
+      .snapshotChanges()
+      .pipe(map((actions) => this.mapCollectionData<Faq>(actions)));
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
