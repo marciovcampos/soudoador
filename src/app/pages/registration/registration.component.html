@@ -6,7 +6,41 @@
 
 <app-two-column-layout>
   <div column2>
-    <h2>Segunda Coluna</h2>
-    <p>Conteúdo da segunda coluna aqui.</p>
+    <form
+      class="registration-form"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
+      <mat-form-field>
+        <input matInput placeholder="Nome" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Tipo Sanguíneo" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Peso" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Data de nascimento" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Última doação de sangue" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Senha" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="password"
+          placeholder="Confirmar senha"
+          required
+        />
+      </mat-form-field>
+      <button mat-flat-button color="accent" class="register">Entrar</button>
+    </form>
   </div>
 </app-two-column-layout>
