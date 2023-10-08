@@ -1,5 +1,9 @@
 <div class="faq-list">
-  <div class="faq" *ngFor="let fag of faqs; let index = index">
-    <span class="index-circle">{{ index + 1 }}</span>
+  <div class="faq-row" *ngFor="let faq of faqs; let index = index">
+    <div class="faq">
+      <span class="index-circle">{{ index + 1 }}</span>
+      <h3>{{ faq.question }}</h3>
+      <span class="faq-answer">{{ faq.answer }}</span>
+    </div>
   </div>
 </div>
