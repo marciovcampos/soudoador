@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuItem } from 'src/app/shared/menu-item.model';
+import { MenuItem } from 'src/app/model/menu-item.model';
 
 const menuItems: MenuItem[] = [
   { label: 'Campanhas', link: '/campanhas' },
