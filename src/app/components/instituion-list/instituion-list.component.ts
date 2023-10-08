@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/shared/firebase.service';
-import { Instituion } from 'src/app/shared/instituion';
+import { Instituion } from 'src/app/model/instituion';
 
 @Component({
   selector: 'app-instituion-list',
@@ -17,7 +17,7 @@ export class InstituionListComponent implements OnInit {
   }
 
   getAllInstituions(): void {
-    this.service.getAllInstituions().subscribe((data) => {
+    this.service.getAllInstitutions().subscribe((data) => {
       this.institutions = data;
     });
   }
