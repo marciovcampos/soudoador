@@ -1,1 +1,14 @@
-<p>campaign-list works!</p>
+<div class="campaign-list">
+  <div class="campaign" *ngFor="let campaign of campaigns">
+    <div class="column">
+      <div class="image-container">
+        <img
+          [src]="campaign.image"
+          [alt]="campaign.name"
+          class="centered-image"
+        />
+      </div>
+    </div>
+    <div class="column"></div>
+  </div>
+</div>

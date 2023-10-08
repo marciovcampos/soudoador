@@ -1,0 +1,26 @@
+.campaign-list {
+  background: var(--white-900, #fff);
+  padding: 7rem 5.5rem;
+}
+
+.instituion {
+  display: flex;
+  margin-bottom: 8rem;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.centered-image {
+  max-width: 100%;
+  width: 27rem;
+}
