@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FirebaseService } from 'src/app/shared/firebase.service';
 
 @Component({
   selector: 'app-registration',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegistrationComponent {
   registrationForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public service: FirebaseService) {
     // Inicialize o formulário com os campos e as validações
     this.registrationForm = this.fb.group({
       name: ['', Validators.required],
@@ -26,7 +27,7 @@ export class RegistrationComponent {
   createUser() {
     if (this.registrationForm.valid) {
       const user = this.registrationForm.value;
-      console.log('Dados enviados para o backend:', user);
+      this.service.createUser(user);
     } else {
       this.markFormGroupTouched(this.registrationForm);
     }

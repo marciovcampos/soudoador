@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 import { Institution } from '../model/institution';
 import { Campaign } from '../model/campaign';
 import { Faq } from '../model/faq';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root',
@@ -41,6 +42,10 @@ export class FirebaseService {
     return this.faqCollection
       .snapshotChanges()
       .pipe(map((actions) => this.mapCollectionData<Faq>(actions)));
+  }
+
+  createUser(user: User) {
+    console.log('user- ', user);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
