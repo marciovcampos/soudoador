@@ -1,6 +1,9 @@
 <div class="campaign-list">
-  <div class="campaign" *ngFor="let campaign of campaigns">
-    <div class="column">
+  <div class="campaign" *ngFor="let campaign of campaigns; let even = even">
+    <div
+      class="column"
+      [ngClass]="{ 'column-left': even, 'column-right': !even }"
+    >
       <div class="image-container">
         <img
           [src]="campaign.image"
@@ -9,7 +12,10 @@
         />
       </div>
     </div>
-    <div class="column">
+    <div
+      class="column"
+      [ngClass]="{ 'column-right': even, 'column-left': !even }"
+    >
       <h2>{{ campaign.name }}</h2>
       <p>{{ campaign.description }}</p>
       <button mat-flat-button color="accent" class="buttonReadMore">

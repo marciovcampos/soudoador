@@ -1,6 +1,20 @@
+.column-left {
+  .image-container {
+    justify-content: left;
+  }
+  order: 1;
+}
+
+.column-right {
+  .image-container {
+    justify-content: right;
+  }
+  order: 2;
+}
+
 .campaign-list {
   background: var(--white-900, #fff);
-  padding: 7rem 5.5rem;
+  padding: 7rem 7.5rem;
 }
 
 .campaign {
@@ -15,7 +29,6 @@
 
 .image-container {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 100%;
 }
