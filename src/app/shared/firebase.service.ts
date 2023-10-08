@@ -3,6 +3,7 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -20,7 +21,10 @@ export class FirebaseService {
   private faqCollection: AngularFirestoreCollection<Faq>;
   private usersCollection: AngularFirestoreCollection<User>;
 
-  constructor(private firestore: AngularFirestore) {
+  constructor(
+    private firestore: AngularFirestore,
+    public afAuth: AngularFireAuth
+  ) {
     this.institutionsCollection =
       this.firestore.collection<Institution>('instituions');
     this.campaignCollection = this.firestore.collection<Campaign>('campaigns');
@@ -46,7 +50,8 @@ export class FirebaseService {
       .pipe(map((actions) => this.mapCollectionData<Faq>(actions)));
   }
 
-  createUser(user: User): Promise<void> {
+  signUp(user: User): Promise<void> {
+    this.afAuth.createUserWithEmailAndPassword(user.email, user.password);
     return new Promise<void>((resolve, reject) => {
       this.usersCollection
         .add(user)
@@ -55,6 +60,19 @@ export class FirebaseService {
         })
         .catch((error) => {
           reject(`Erro ao criar usuário: ${error}`);
+        });
+    });
+  }
+
+  signIn(email: string, password: string): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      this.afAuth
+        .signInWithEmailAndPassword(email, password)
+        .then(() => {
+          resolve();
+        })
+        .catch((error) => {
+          reject(`Erro ao fazer login: ${error.message}`);
         });
     });
   }

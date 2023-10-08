@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/shared/firebase.service';
+import { markFormGroupTouched } from 'src/app/shared/form-functions';
 
 @Component({
   selector: 'app-registration',
@@ -11,7 +12,6 @@ export class RegistrationComponent {
   registrationForm: FormGroup;
 
   constructor(private fb: FormBuilder, public service: FirebaseService) {
-    // Inicialize o formulário com os campos e as validações
     this.registrationForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -28,25 +28,14 @@ export class RegistrationComponent {
     if (this.registrationForm.valid) {
       const user = this.registrationForm.value;
       try {
-        await this.service.createUser(user);
+        await this.service.signUp(user);
         console.log('Usuário criado com sucesso!');
       } catch (error) {
         console.error('Erro ao criar usuário:', error);
       }
     } else {
-      this.markFormGroupTouched(this.registrationForm);
+      markFormGroupTouched(this.registrationForm);
     }
-  }
-
-  private markFormGroupTouched(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach((key) => {
-      const control = formGroup.controls[key];
-      control.markAsTouched();
-
-      if (control instanceof FormGroup) {
-        this.markFormGroupTouched(control);
-      }
-    });
   }
 
   get name() {
@@ -54,7 +43,7 @@ export class RegistrationComponent {
   }
 
   get email() {
-    return this.registrationForm.get('name');
+    return this.registrationForm.get('email');
   }
 
   get bloodType() {

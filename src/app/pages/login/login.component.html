@@ -6,12 +6,33 @@
 
 <app-two-column-layout>
   <div column2>
-    <form class="login-form" fxLayout="column" fxLayoutAlign="center center">
+    <form
+      class="login-form"
+      [formGroup]="loginForm"
+      (ngSubmit)="login()"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+    >
       <mat-form-field>
-        <input matInput placeholder="Email" required />
+        <input matInput placeholder="Email" formControlName="email" />
+        <mat-error *ngIf="email?.hasError('required')">
+          Digite o e-mail!
+        </mat-error>
+        <mat-error *ngIf="email?.hasError('email')">
+          Email inválido!
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" placeholder="Senha" required />
+        <input
+          matInput
+          type="password"
+          placeholder="Senha"
+          formControlName="password"
+          required
+        />
+        <mat-error *ngIf="password?.hasError('required')">
+          Digite a senha!
+        </mat-error>
       </mat-form-field>
       <button mat-flat-button color="accent" class="login">Entrar</button>
     </form>
