@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatChipsModule } from '@angular/material/chips';
 import { CampaignsComponent } from './campaigns.component';
 import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
+import { CampaignListComponent } from 'src/app/components/campaign-list/campaign-list.component';
 
 describe('CampaignsComponent', () => {
   let component: CampaignsComponent;
@@ -9,7 +10,11 @@ describe('CampaignsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CampaignsComponent, PageTitleComponent],
+      declarations: [
+        CampaignsComponent,
+        PageTitleComponent,
+        CampaignListComponent,
+      ],
       imports: [MatChipsModule],
     });
     fixture = TestBed.createComponent(CampaignsComponent);

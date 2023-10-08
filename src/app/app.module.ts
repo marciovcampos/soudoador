@@ -31,6 +31,7 @@ import { HomeMessageComponent } from './components/home-message/home-message.com
 import { HomeInstituionComponent } from './components/home-instituion/home-instituion.component';
 import { environment } from '../environments/environment';
 import { InstituionListComponent } from './components/instituion-list/instituion-list.component';
+import { CampaignListComponent } from './components/campaign-list/campaign-list.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { InstituionListComponent } from './components/instituion-list/instituion
     HomeMessageComponent,
     HomeInstituionComponent,
     InstituionListComponent,
+    CampaignListComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
