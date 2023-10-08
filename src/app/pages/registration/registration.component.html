@@ -8,39 +8,79 @@
   <div column2>
     <form
       class="registration-form"
+      [formGroup]="registrationForm"
+      (ngSubmit)="createUser()"
       fxLayout="column"
       fxLayoutAlign="center center"
     >
       <mat-form-field>
-        <input matInput placeholder="Nome" required />
+        <input matInput placeholder="Nome" formControlName="name" required />
+        <mat-error *ngIf="name?.hasError('required')">
+          O nome é obrigatório.
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Email" required />
+        <input matInput placeholder="Email" formControlName="email" />
+        <mat-error *ngIf="email?.hasError('required')">
+          O email é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="email?.hasError('email')">
+          Email inválido.
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Tipo Sanguíneo" required />
+        <input
+          matInput
+          placeholder="Tipo Sanguíneo"
+          formControlName="bloodType"
+        />
+        <mat-error *ngIf="bloodType?.hasError('required')">
+          O tipo sanguíneo é obrigatório.
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Peso" required />
+        <input matInput placeholder="Peso" formControlName="weight" />
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Data de nascimento" required />
+        <input
+          matInput
+          placeholder="Data de nascimento"
+          formControlName="birthday"
+        />
+        <mat-error *ngIf="birthday?.hasError('required')">
+          A data de nascimento é obrigatória.
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Última doação de sangue" required />
+        <input matInput placeholder="Última doação de sangue" />
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" placeholder="Senha" required />
+        <input
+          matInput
+          type="password"
+          placeholder="Senha"
+          formControlName="password"
+          required
+        />
+        <mat-error *ngIf="password?.hasError('required')">
+          A senha é obrigatória.
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input
           matInput
           type="password"
           placeholder="Confirmar senha"
+          formControlName="confirmPassword"
           required
         />
+        <mat-error *ngIf="confirmPassword?.hasError('required')">
+          A confirmação de senha é obrigatória.
+        </mat-error>
       </mat-form-field>
-      <button mat-flat-button color="accent" class="register">Entrar</button>
+      <button mat-flat-button color="accent" class="register" type="submit">
+        Entrar
+      </button>
     </form>
   </div>
 </app-two-column-layout>

@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './registration.component';
 import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
 import { TwoColumnLayoutComponent } from 'src/app/components/two-column-layout/two-column-layout.component';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 describe('RegistrationComponent', () => {
   let component: RegistrationComponent;
@@ -13,6 +14,7 @@ describe('RegistrationComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      providers: [FormBuilder],
       declarations: [
         RegistrationComponent,
         PageTitleComponent,
@@ -23,6 +25,7 @@ describe('RegistrationComponent', () => {
         MatChipsModule,
         MatFormFieldModule,
         MatInputModule,
+        ReactiveFormsModule,
       ],
     });
     fixture = TestBed.createComponent(RegistrationComponent);

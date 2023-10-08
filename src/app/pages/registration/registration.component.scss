@@ -48,11 +48,16 @@ mat-form-field input {
   font-size: 1.2rem;
 }
 
+mat-error {
+  color: var(--accent-color);
+}
+
 .register {
   color: var(--primary-050, #f0fdf4) !important;
   width: 28.125rem;
   height: 3.5rem;
   padding: 16px 28px;
+  margin-top: 1rem;
 
   justify-content: center;
   align-items: center;
