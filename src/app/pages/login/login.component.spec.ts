@@ -4,6 +4,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login.component';
@@ -31,6 +32,7 @@ describe('LoginComponent', () => {
         MatChipsModule,
         MatFormFieldModule,
         MatInputModule,
+        MatSnackBarModule,
         ReactiveFormsModule,
       ],
     });
