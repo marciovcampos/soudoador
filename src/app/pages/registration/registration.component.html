@@ -39,7 +39,15 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Peso" formControlName="weight" />
+        <input
+          matInput
+          placeholder="Peso"
+          type="number"
+          formControlName="weight"
+        />
+        <mat-error *ngIf="weight?.hasError('pattern')">
+          Peso inválido!
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input
