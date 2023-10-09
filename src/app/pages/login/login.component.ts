@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/shared/firebase.service';
+import { SnackbarService } from 'src/app/shared/snackbar.service';
 import { markFormGroupTouched } from 'src/app/shared/form-functions';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     public service: FirebaseService,
-    private snackBar: MatSnackBar
+    private snackbarService: SnackbarService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -28,10 +28,10 @@ export class LoginComponent {
       const { email, password } = this.loginForm.value;
       try {
         await this.service.signIn(email, password);
-        this.snackBar.open('Usuário logado com sucesso!');
+        this.snackbarService.show('Usuário logado com sucesso!');
       } catch (error) {
         console.error('Usuário ou senha invalidos: ', error);
-        this.snackBar.open('Usuário ou senha inválidos!');
+        this.snackbarService.show('Usuário ou senha inválidos!');
       }
     } else {
       markFormGroupTouched(this.loginForm);

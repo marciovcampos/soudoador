@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/shared/firebase.service';
+import { SnackbarService } from 'src/app/shared/snackbar.service';
 import { markFormGroupTouched } from 'src/app/shared/form-functions';
 
 @Component({
@@ -15,7 +15,7 @@ export class RegistrationComponent {
   constructor(
     private fb: FormBuilder,
     public service: FirebaseService,
-    private snackBar: MatSnackBar
+    private snackbarService: SnackbarService
   ) {
     this.registrationForm = this.fb.group({
       name: ['', Validators.required],
@@ -34,10 +34,10 @@ export class RegistrationComponent {
       const user = this.registrationForm.value;
       try {
         await this.service.signUp(user);
-        this.snackBar.open('Usuário criado com sucesso!');
+        this.snackbarService.show('Usuário criado com sucesso!');
       } catch (error) {
         console.error('Erro ao criar usuário: ', error);
-        this.snackBar.open('Erro ao criar usuário!');
+        this.snackbarService.show('Erro ao criar usuário!');
       }
     } else {
       markFormGroupTouched(this.registrationForm);
