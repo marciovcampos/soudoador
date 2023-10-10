@@ -2,7 +2,12 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/shared/firebase.service';
 import { SnackbarService } from 'src/app/shared/snackbar.service';
-import { markFormGroupTouched, resetForm } from 'src/app/shared/form-functions';
+import {
+  formatDateToDDMMYYYY,
+  markFormGroupTouched,
+  resetForm,
+} from 'src/app/shared/form-functions';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-registration',
@@ -31,7 +36,33 @@ export class RegistrationComponent {
 
   async createUser() {
     if (this.registrationForm.valid) {
-      const user = this.registrationForm.value;
+      const {
+        name,
+        email,
+        bloodType,
+        weight,
+        birthday,
+        lastDonation,
+        password,
+      } = this.registrationForm.value;
+
+      const formattedBirthday = birthday
+        ? formatDateToDDMMYYYY(new Date(birthday))
+        : '';
+      const formattedLastDonation = lastDonation
+        ? formatDateToDDMMYYYY(new Date(lastDonation))
+        : '';
+
+      const user = {
+        name,
+        email,
+        bloodType,
+        weight,
+        birthday: formattedBirthday,
+        lastDonation: formattedLastDonation,
+        password,
+      };
+
       try {
         await this.service.signUp(user);
         this.snackbarService.show('Usuário criado com sucesso!');

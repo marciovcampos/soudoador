@@ -6,6 +6,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration.component';
 import { PageTitleComponent } from 'src/app/components/page-title/page-title.component';
@@ -33,6 +35,8 @@ describe('RegistrationComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         MatSnackBarModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
         ReactiveFormsModule,
       ],
     });

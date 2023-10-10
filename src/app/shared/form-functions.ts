@@ -20,3 +20,10 @@ export function resetForm(formGroup: FormGroup | null) {
     });
   }
 }
+
+export function formatDateToDDMMYYYY(date: Date): string {
+  const day = ('0' + date.getDate()).slice(-2);
+  const month = ('0' + (date.getMonth() + 1)).slice(-2); // Os meses são baseados em zero, então adicionamos 1
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+}

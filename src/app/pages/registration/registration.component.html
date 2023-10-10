@@ -52,19 +52,32 @@
       <mat-form-field>
         <input
           matInput
-          placeholder="Data de nascimento"
+          placeholder="Data de Nascimento"
+          [matDatepicker]="picker1"
           formControlName="birthday"
         />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
         <mat-error *ngIf="birthday?.hasError('required')">
           A data de nascimento é obrigatória.
         </mat-error>
       </mat-form-field>
+
       <mat-form-field>
         <input
           matInput
           placeholder="Última doação de sangue"
+          [matDatepicker]="picker2"
           formControlName="lastDonation"
         />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker2"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
         <input

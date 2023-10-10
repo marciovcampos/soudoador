@@ -1,5 +1,5 @@
 export interface User {
-  $key: string;
+  $key?: string;
   name: string;
   email: string;
   password: string;
@@ -7,7 +7,7 @@ export interface User {
   weight: string;
   birthday: string;
   lastDonation: string;
-  address: string;
-  stateId: string;
-  cityId: string;
+  address?: string;
+  stateId?: string;
+  cityId?: string;
 }
