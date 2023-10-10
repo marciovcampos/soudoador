@@ -23,16 +23,43 @@ export class RegistrationComponent {
     public service: FirebaseService,
     private snackbarService: SnackbarService
   ) {
-    this.registrationForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      bloodType: ['', Validators.required],
-      weight: ['', [Validators.pattern('^[0-9]*$')]],
-      birthday: ['', Validators.required],
-      lastDonation: [''],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
-    });
+    this.registrationForm = this.fb.group(
+      {
+        name: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        bloodType: ['', Validators.required],
+        weight: ['', [Validators.pattern('^[0-9]*$')]],
+        birthday: ['', Validators.required],
+        lastDonation: [''],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', Validators.required],
+      },
+      {
+        validators: [this.passwordsMatch],
+      }
+    );
+  }
+
+  passwordsMatch(group: FormGroup) {
+    const passwordControl = group.get('password');
+    const confirmPasswordControl = group.get('confirmPassword');
+
+    if (!passwordControl || !confirmPasswordControl) {
+      return null;
+    }
+
+    const password = passwordControl.value;
+    const confirmPassword = confirmPasswordControl.value;
+
+    if (confirmPassword === '') {
+      confirmPasswordControl.setErrors({ required: true });
+    } else if (password !== confirmPassword) {
+      confirmPasswordControl.setErrors({ notMatching: true });
+    } else {
+      confirmPasswordControl.setErrors(null);
+    }
+
+    return null;
   }
 
   async createUser() {
