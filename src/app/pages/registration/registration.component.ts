@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/shared/firebase.service';
 import { SnackbarService } from 'src/app/shared/snackbar.service';
-import { markFormGroupTouched } from 'src/app/shared/form-functions';
+import { markFormGroupTouched, resetForm } from 'src/app/shared/form-functions';
 
 @Component({
   selector: 'app-registration',
@@ -35,6 +35,7 @@ export class RegistrationComponent {
       try {
         await this.service.signUp(user);
         this.snackbarService.show('Usuário criado com sucesso!');
+        resetForm(this.registrationForm);
       } catch (error) {
         console.error('Erro ao criar usuário: ', error);
         this.snackbarService.show('Erro ao criar usuário!');

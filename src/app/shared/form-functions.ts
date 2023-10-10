@@ -10,3 +10,13 @@ export function markFormGroupTouched(formGroup: FormGroup) {
     }
   });
 }
+
+export function resetForm(formGroup: FormGroup | null) {
+  if (formGroup) {
+    formGroup.reset();
+
+    Object.keys(formGroup.controls).forEach((key) => {
+      formGroup.get(key)?.setErrors(null);
+    });
+  }
+}

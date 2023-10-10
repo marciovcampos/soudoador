@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseService } from 'src/app/shared/firebase.service';
 import { SnackbarService } from 'src/app/shared/snackbar.service';
-import { markFormGroupTouched } from 'src/app/shared/form-functions';
+import { markFormGroupTouched, resetForm } from 'src/app/shared/form-functions';
 
 @Component({
   selector: 'app-login',
@@ -29,6 +29,7 @@ export class LoginComponent {
       try {
         await this.service.signIn(email, password);
         this.snackbarService.show('Usuário logado com sucesso!');
+        resetForm(this.loginForm);
       } catch (error) {
         console.error('Usuário ou senha invalidos: ', error);
         this.snackbarService.show('Usuário ou senha inválidos!');
@@ -36,6 +37,14 @@ export class LoginComponent {
     } else {
       markFormGroupTouched(this.loginForm);
     }
+  }
+
+  resetForm() {
+    this.loginForm.setValue({
+      nome: null,
+      email: null,
+      // ... outras propriedades do seu formulário
+    });
   }
 
   get email() {
