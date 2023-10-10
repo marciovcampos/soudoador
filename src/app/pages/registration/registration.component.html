@@ -28,12 +28,13 @@
           Email inválido!
         </mat-error>
       </mat-form-field>
-      <mat-form-field>
-        <input
-          matInput
-          placeholder="Tipo Sanguíneo"
-          formControlName="bloodType"
-        />
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo Sanguíneo</mat-label>
+        <mat-select formControlName="bloodType" required>
+          <mat-option *ngFor="let bloodType of bloodTypes" [value]="bloodType">
+            {{ bloodType }}
+          </mat-option>
+        </mat-select>
         <mat-error *ngIf="bloodType?.hasError('required')">
           O tipo sanguíneo é obrigatório.
         </mat-error>

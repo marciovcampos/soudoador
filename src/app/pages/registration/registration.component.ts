@@ -16,6 +16,7 @@ import { User } from 'src/app/model/user';
 })
 export class RegistrationComponent {
   registrationForm: FormGroup;
+  bloodTypes: string[] = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
 
   constructor(
     private fb: FormBuilder,
